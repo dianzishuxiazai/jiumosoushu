@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鸠摩搜书官网入口 - 便捷的电子书搜索平台</title>
+    <meta name="keywords" content="鸠摩搜书、电子书搜索、免费下载、多格式支持">
+    <meta name="description" content="鸠摩搜书是一个专注于电子书资源搜索的在线平台，聚合海量资源，支持多种格式，无广告干扰，提供便捷的图书获取体验。">
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = { darkMode: `class` }
+    </script>
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="./icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <script>
+        // 自定义Tailwind配置
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#E50914', // 红色主色调
+                        secondary: '#FF6B6B', // 浅红色辅助色
+                        neutral: {
+                            100: '#F8F9FA',
+                            200: '#E9ECEF',
+                            700: '#343A40',
+                            800: '#212529',
+                            900: '#121212'
+                        }
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+            .hover-scale {
+                transition: transform 0.3s ease;
+            }
+            .hover-scale:hover {
+                transform: scale(1.03);
+            }
+            .feature-card {
+                @apply bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+            }
+            .icon-bg {
+                @apply bg-primary/10 dark:bg-primary/20 p-3 rounded-lg mr-4;
+            }
+            .resource-card {
+                @apply bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1;
+            }
+            .user-card {
+                @apply bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md transition-all duration-300 hover:shadow-lg;
+            }
+            .user-icon {
+                @apply w-16 h-16 rounded-full overflow-hidden shadow-md mb-4;
+            }
+        }
+    </style>
+</head>
+
+<body class="min-h-screen font-inter bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
+    <div class="container mx-auto px-4 py-8 max-w-7xl">
+
+        <!-- 导航栏 -->
+        <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-gray-800/90 backdrop-blur-md shadow-sm transition-all duration-300" id="navbar">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between h-16">
+                    <div class="flex items-center">
+                        <a href="#" class="flex-shrink-0 flex items-center">
+                            <span class="text-primary font-bold text-xl">鸠摩搜书</span>
+                        </a>
+                        <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                            <a href="#about" class="border-b-2 border-primary px-1 pt-1 text-sm font-medium text-primary">网站介绍</a>
+                            <a href="#features" class="border-transparent hover:border-primary px-1 pt-1 text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-primary">功能特点</a>
+                            <a href="#steps" class="border-transparent hover:border-primary px-1 pt-1 text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-primary">使用步骤</a>
+                        </div>
+                    </div>
+                    <div class="flex items-center">
+                        <button class="ml-4 block sm:hidden p-2 rounded-md text-gray-500 dark:text-gray-400 hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-700" id="mobile-menu-button">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 移动端菜单 -->
+            <div class="sm:hidden hidden" id="mobile-menu">
+                <div class="pt-2 pb-3 space-y-1 px-4">
+                    <a href="#about" class="bg-primary/5 border-l-4 border-primary text-primary block pl-3 pr-4 py-2 text-base font-medium">网站介绍</a>
+                    <a href="#features" class="border-l-4 border-transparent hover:border-primary hover:bg-primary/5 text-gray-600 dark:text-gray-300 hover:text-primary block pl-3 pr-4 py-2 text-base font-medium">功能特点</a>
+                    <a href="#steps" class="border-l-4 border-transparent hover:border-primary hover:bg-primary/5 text-gray-600 dark:text-gray-300 hover:text-primary block pl-3 pr-4 py-2 text-base font-medium">使用步骤</a>
+                </div>
+            </div>
+        </nav>
+
+        <header class="relative bg-gradient-to-r from-primary to-secondary text-white py-16 md:py-24 pt-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4 text-shadow">鸠摩搜书</h1>
+                    <p class="text-xl md:text-2xl max-w-3xl mx-auto opacity-90">便捷的电子书搜索平台，免费获取海量资源。</p>
+                    <div class="mt-8 flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6">
+                        <a class="bg-white text-primary hover:bg-gray-100 hover:scale-105 transition-transform font-medium py-3 px-6 rounded-lg shadow-lg"
+                            href="https://www.imi123.cn/sites/1658.html" target="_blank">
+                            访问官网
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="absolute inset-0 bg-black opacity-10"></div>
+        </header>
+
+        <!-- 增加隔离空间 -->
+        <div class="h-5 md:h-10"></div>
+
+        <!-- 网站介绍部分 -->
+        <section id="about" class="mb-16 fade-in" style="animation-delay: 0.4s">
+            <h2 class="text-2xl font-bold mb-8 flex items-center">
+                网站介绍
+            </h2>
+            <div class="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-lg">
+                <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+                    鸠摩搜书是一个专注于电子书资源搜索的在线平台，致力于为用户提供便捷、高效的图书获取体验。它聚合了海量电子书资源，涵盖小说、学术文献、技术教程、历史哲学等多个领域，支持PDF、EPUB、MOBI、TXT等多种格式。
+                </p>
+                <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+                    鸠摩搜书的界面简洁明了，无广告干扰，用户无需注册或登录即可使用所有功能。此外，鸠摩搜书通过智能爬取第三方平台资源，为用户提供多样化的下载选择，确保内容的多样性和更新速度。
+                </p>
+            </div>
+        </section>
+
+        <!-- 功能特点部分 -->
+        <section id="features" class="mb-16">
+            <h2 class="text-2xl font-bold mb-8">功能特点</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="feature-card">
+                    <h3 class="text-xl font-semibold mb-4">强大的搜索功能</h3>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        鸠摩搜书支持通过书名、作者、关键词甚至ISBN码进行检索，即使输入模糊信息也能通过智能补全提供相关结果。平台整合了文学、社科、科技、教育等多个领域的电子书资源，覆盖PDF、EPUB、MOBI等多种格式，适配Kindle、iPad等设备。
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <h3 class="text-xl font-semibold mb-4">纯净无广告体验</h3>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        鸠摩搜书以用户体验为核心，网站界面简洁明了，无弹窗广告干扰，让用户专注于搜索和下载。无需注册账号或付费，所有功能即点即用，适合快速查找资料的场景。
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <h3 class="text-xl font-semibold mb-4">跨平台资源整合</h3>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        鸠摩搜书通过智能爬取技术，整合百度网盘、OneDrive、微盘等多种第三方平台的资源，为用户提供丰富的下载选择。平台不存储文件，而是充当资源聚合桥梁，确保内容多样性和更新速度。
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <h3 class="text-xl font-semibold mb-4">多格式支持</h3>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        鸠摩搜书支持多种电子书格式，包括PDF、TXT、EPUB、MOBI、AZW3等，用户可以根据自己的阅读设备或偏好选择合适的格式。
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <h3 class="text-xl font-semibold mb-4">社区支持与资源更新</h3>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        鸠摩搜书通过社区反馈机制不断优化资源链接，确保资源的可用性。平台每日更新热门和最新书籍，确保用户能够及时获取潮流读物。
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <h3 class="text-xl font-semibold mb-4">个性化推荐</h3>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        鸠摩搜书会根据用户的阅读习惯和喜好，推荐相关书籍，帮助用户发现更多感兴趣的书籍。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 使用步骤部分 -->
+        <section id="steps" class="mb-16">
+            <h2 class="text-2xl font-bold mb-8">使用步骤</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="feature-card">
+                    <h3 class="text-xl font-semibold mb-4">访问官网</h3>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        打开浏览器，输入鸠摩搜书的官方网址 </a>。
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <h3 class="text-xl font-semibold mb-4">搜索资源</h3>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        在首页的搜索框中输入书名、作者名或关键词，点击“Search”按钮开始搜索。鸠摩搜书支持通过书名、作者、关键词甚至ISBN码进行检索。
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <h3 class="text-xl font-semibold mb-4">查看搜索结果</h3>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        搜索结果页面会列出相关的资源，包括书籍的格式、大小、来源等信息。用户可以根据需要选择合适的资源进行下载。
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <h3 class="text-xl font-semibold mb-4">选择下载链接</h3>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        点击目标资源，跳转至第三方平台（如百度网盘）。部分资源可能需要关注公众号获取验证码。
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <h3 class="text-xl font-semibold mb-4">下载资源</h3>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        在第三方平台中，点击下载按钮，将资源保存到本地设备。
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <h3 class="text-xl font-semibold mb-4">离线阅读</h3>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        下载完成后，用户可以在本地设备上查看和使用这些资源，随时随地享受阅读。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 页脚 -->
+        <footer class="bg-gray-100 dark:bg-gray-800 py-12 rounded-xl"> 
+                <div class="border-gray-700 text-center">
+                    <p class="text-gray-600 dark:text-gray-400 text-sm">按Ctrl+D键组合加入你的浏览器收藏夹，后续持续更新最新网址</p><br>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm">Copyright ©2025 鸠摩搜书</p>
+                </div>
+        </footer>
+
+    </div>
+
+    <script>
+        // 导航栏滚动效果
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-md');
+                navbar.classList.remove('shadow-sm');
+            } else {
+                navbar.classList.remove('shadow-md');
+                navbar.classList.add('shadow-sm');
+            }
+        });
+
+        // 移动端菜单切换
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // 关闭移动端菜单
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
