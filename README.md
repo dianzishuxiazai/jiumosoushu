@@ -1,6 +1,6 @@
 <h2>鸠摩搜书官网入口，国内网盘资源书籍小说搜索工具|打不开|下载</h2>
 <p>鸠摩搜书是一个专注于提供电子书资源搜索服务的网站，其前身是Z-Library的国内镜像站点，旨在为用户提供便捷的电子书获取途径。该网站不仅支持多种电子书格式的搜索与下载，如PDF、EPUB、MOBI、TXT等，还涵盖了小说、文学、科技、历史、学术论文等多种类型的资源。用户可以通过关键词、作者名、书名或ISBN等方式进行搜索，快速找到所需的电子书资源。此外，鸠摩搜书还提供分类浏览、书单推荐、用户评价等功能，帮助用户更好地了解和选择书籍。</p>
-<p><strong>一键访问：</strong><a href="https://www.imi123.cn/sites/1658.html" target="_blank"><strong>鸠摩搜书最新网址</strong></a></p>
+<p><strong>一键访问：</strong><a href="https://jiumosoushu.sodanav.com/" target="_blank"><strong>鸠摩搜书最新网址</strong></a></p>
 <p><strong>一键访问：</strong><a href="https://wangpanziyuan.pages.dev/" target="_blank"><strong>电子书/4K电影/无损音乐资源下载资源包</strong></a></p>
 <p><strong>一键访问：</strong><a href="http://ip.harmonylink.net/share/e82025" target="_blank"><strong>海外代理网络·可看蓝光4K影视</strong></a></p>
 <p>鸠摩搜书的功能特点如下：</p>
